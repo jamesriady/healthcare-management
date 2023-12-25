@@ -4,6 +4,7 @@ app_publisher = "James Riady"
 app_description = "Healthcare Mangement System"
 app_email = "jamesriady1998@gmail.com"
 app_license = "\'healthcare_management\' created at /home/frappe/frappe-bench/apps/healthcare_management"
+required_apps = ["healthcare"]
 
 # Includes in <head>
 # ------------------
@@ -108,9 +109,12 @@ app_license = "\'healthcare_management\' created at /home/frappe/frappe-bench/ap
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Sales Invoice": "healthcare_management.healthcare_management.custom_doctype.sales_invoice.sales_invoice.HealthcareSalesInvoice",
+	"Clinical Procedure": "healthcare_management.healthcare_management.custom_doctype.clinical_procedure.clinical_procedure.HealthcareClinicalProcedure",
+	"Patient Encounter": "healthcare_management.healthcare_management.custom_doctype.patient_encounter.patient_encounter.HealthcarePatientEncounter",
+	"Nursing Task": "healthcare_management.healthcare_management.custom_doctype.nursing_task.nursing_task.HealthcareNursingTask",
+}
 
 # Document Events
 # ---------------
@@ -160,9 +164,9 @@ app_license = "\'healthcare_management\' created at /home/frappe/frappe-bench/ap
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
-# override_doctype_dashboards = {
-#	"Task": "healthcare_management.task.get_dashboard_data"
-# }
+override_doctype_dashboards = {
+	"Patient Encounter": "healthcare_management.healthcare_management.custom_doctype.patient_encounter.patient_encounter_dashboard.get_dashboard_data",
+}
 
 # exempt linked doctypes from being automatically cancelled
 #
