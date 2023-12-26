@@ -1,7 +1,5 @@
 from frappe import _
 
-from healthcare.healthcare.doctype.patient_encounter.patient_encounter import PatientEncounter
-
 def get_dashboard_data(data):
 	return {
 		"fieldname": "encounter",
