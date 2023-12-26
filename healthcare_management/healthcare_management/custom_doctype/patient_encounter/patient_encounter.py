@@ -1,6 +1,7 @@
 import frappe
 
 from healthcare.healthcare.doctype.patient_encounter.patient_encounter import PatientEncounter
+from healthcare.healthcare.doctype.clinical_procedure.clinical_procedure import get_items
 
 class HealthcarePatientEncounter(PatientEncounter):
 	def make_service_request(self):
@@ -44,27 +45,48 @@ class HealthcarePatientEncounter(PatientEncounter):
 
 	def make_clinical_procedure(self, procedure_template, procedure):
 		service_unit = None
-		medical_department = None
+		medical_department = procedure_template.medical_department
 		
 		if self.appointment:
 			appointment = frappe.get_doc("Patient Appointment", self.appointment)
 			service_unit = appointment.service_unit
 			medical_department = appointment.department
 
-		if not medical_department:
+		if not medical_department and self.practitioner:
 			practitioner = frappe.get_doc("Healthcare Practitioner", self.practitioner)
 			medical_department = practitioner.department
 
+		warehouse = None
+		if procedure_template.consume_stock:
+			if service_unit:
+				warehouse = frappe.db.get_value("Healthcare Service Unit", service_unit, "warehouse")
+			if not warehouse:
+				warehouse = frappe.db.get_value("Stock Settings", None, "default_warehouse")
+
 		clinical_procedure = frappe.get_doc({
 			"doctype": "Clinical Procedure",
-			"procedure_template": procedure_template.name,
+			"procedure_template": procedure_template.template,
 			"patient": self.patient,
 			"appointment": self.appointment,
 			"practitioner": self.practitioner,
 			"medical_department": medical_department,
 			"service_unit": service_unit,
 			"service_request": procedure.service_request,
+			"consume_stock": procedure_template.consume_stock,
+			"warehouse": warehouse,
 		})
+
+		if procedure_template.consume_stock:
+			items = get_items("Clinical Procedure Item", clinical_procedure.procedure_template, "Clinical Procedure Template")
+
+			for item in items:
+				cp_child = clinical_procedure.append("items")
+				cp_child.item_code = item.item_code
+				cp_child.item_name = item.item_name
+				cp_child.qty = item.qty
+				cp_child.uom = item.uom
+				cp_child.stock_uom = item.stock_uom
+				cp_child.conversion_factor = item.conversion_factor
 
 		clinical_procedure.insert(ignore_permissions=True)
 		return clinical_procedure
