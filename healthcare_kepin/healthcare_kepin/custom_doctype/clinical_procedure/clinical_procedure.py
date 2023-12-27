@@ -2,7 +2,7 @@ import frappe
 
 from healthcare.healthcare.doctype.clinical_procedure.clinical_procedure import ClinicalProcedure
 
-class HealthcareClinicalProcedure(ClinicalProcedure):
+class KepinClinicalProcedure(ClinicalProcedure):
 	def validate(self):
 		super().validate()
 		self.set_patient_age()

@@ -1,9 +1,9 @@
 [project]
-name = "healthcare_management"
+name = "healthcare_kepin"
 authors = [
     { name = "James Riady", email = "jamesriady1998@gmail.com"}
 ]
-description = "Healthcare Mangement System"
+description = "Healthcare Kepin System"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

@@ -1,7 +1,7 @@
-## Healthcare Management
+## Healthcare Kepin
 
-Healthcare Mangement System
+Healthcare Kepin System
 
 #### License
 
-'healthcare_management' created at /home/frappe/frappe-bench/apps/healthcare_management
+'healthcare_kepin' created at /home/frappe/frappe-bench/apps/healthcare_kepin

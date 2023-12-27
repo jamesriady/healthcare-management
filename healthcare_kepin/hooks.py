@@ -1,24 +1,24 @@
-app_name = "healthcare_management"
-app_title = "Healthcare Management"
+app_name = "healthcare_kepin"
+app_title = "Healthcare Kepin"
 app_publisher = "James Riady"
-app_description = "Healthcare Mangement System"
+app_description = "Healthcare Kepin System"
 app_email = "jamesriady1998@gmail.com"
-app_license = "\'healthcare_management\' created at /home/frappe/frappe-bench/apps/healthcare_management"
+app_license = "\'healthcare_kepin\' created at /home/frappe/frappe-bench/apps/healthcare_kepin"
 required_apps = ["healthcare"]
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/healthcare_management/css/healthcare_management.css"
-# app_include_js = "/assets/healthcare_management/js/healthcare_management.js"
+# app_include_css = "/assets/healthcare_kepin/css/healthcare_kepin.css"
+# app_include_js = "/assets/healthcare_kepin/js/healthcare_kepin.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/healthcare_management/css/healthcare_management.css"
-# web_include_js = "/assets/healthcare_management/js/healthcare_management.js"
+# web_include_css = "/assets/healthcare_kepin/css/healthcare_kepin.css"
+# web_include_js = "/assets/healthcare_kepin/js/healthcare_kepin.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "healthcare_management/public/scss/website"
+# website_theme_scss = "healthcare_kepin/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -59,43 +59,43 @@ doctype_js = {
 
 # add methods and filters to jinja environment
 # jinja = {
-#	"methods": "healthcare_management.utils.jinja_methods",
-#	"filters": "healthcare_management.utils.jinja_filters"
+#	"methods": "healthcare_kepin.utils.jinja_methods",
+#	"filters": "healthcare_kepin.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "healthcare_management.install.before_install"
-# after_install = "healthcare_management.install.after_install"
+# before_install = "healthcare_kepin.install.before_install"
+# after_install = "healthcare_kepin.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "healthcare_management.uninstall.before_uninstall"
-# after_uninstall = "healthcare_management.uninstall.after_uninstall"
+# before_uninstall = "healthcare_kepin.uninstall.before_uninstall"
+# after_uninstall = "healthcare_kepin.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "healthcare_management.utils.before_app_install"
-# after_app_install = "healthcare_management.utils.after_app_install"
+# before_app_install = "healthcare_kepin.utils.before_app_install"
+# after_app_install = "healthcare_kepin.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "healthcare_management.utils.before_app_uninstall"
-# after_app_uninstall = "healthcare_management.utils.after_app_uninstall"
+# before_app_uninstall = "healthcare_kepin.utils.before_app_uninstall"
+# after_app_uninstall = "healthcare_kepin.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "healthcare_management.notifications.get_notification_config"
+# notification_config = "healthcare_kepin.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -114,10 +114,10 @@ doctype_js = {
 # Override standard doctype classes
 
 override_doctype_class = {
-	"Sales Invoice": "healthcare_management.healthcare_management.custom_doctype.sales_invoice.sales_invoice.HealthcareSalesInvoice",
-	"Clinical Procedure": "healthcare_management.healthcare_management.custom_doctype.clinical_procedure.clinical_procedure.HealthcareClinicalProcedure",
-	"Patient Encounter": "healthcare_management.healthcare_management.custom_doctype.patient_encounter.patient_encounter.HealthcarePatientEncounter",
-	"Nursing Task": "healthcare_management.healthcare_management.custom_doctype.nursing_task.nursing_task.HealthcareNursingTask",
+	"Sales Invoice": "healthcare_kepin.healthcare_kepin.custom_doctype.sales_invoice.sales_invoice.KepinSalesInvoice",
+	"Clinical Procedure": "healthcare_kepin.healthcare_kepin.custom_doctype.clinical_procedure.clinical_procedure.KepinClinicalProcedure",
+	"Patient Encounter": "healthcare_kepin.healthcare_kepin.custom_doctype.patient_encounter.patient_encounter.KepinPatientEncounter",
+	"Nursing Task": "healthcare_kepin.healthcare_kepin.custom_doctype.nursing_task.nursing_task.KepinNursingTask",
 }
 
 # Document Events
@@ -137,39 +137,39 @@ override_doctype_class = {
 
 # scheduler_events = {
 #	"all": [
-#		"healthcare_management.tasks.all"
+#		"healthcare_kepin.tasks.all"
 #	],
 #	"daily": [
-#		"healthcare_management.tasks.daily"
+#		"healthcare_kepin.tasks.daily"
 #	],
 #	"hourly": [
-#		"healthcare_management.tasks.hourly"
+#		"healthcare_kepin.tasks.hourly"
 #	],
 #	"weekly": [
-#		"healthcare_management.tasks.weekly"
+#		"healthcare_kepin.tasks.weekly"
 #	],
 #	"monthly": [
-#		"healthcare_management.tasks.monthly"
+#		"healthcare_kepin.tasks.monthly"
 #	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "healthcare_management.install.before_tests"
+# before_tests = "healthcare_kepin.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "healthcare_management.event.get_events"
+#	"frappe.desk.doctype.event.event.get_events": "healthcare_kepin.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 override_doctype_dashboards = {
-	"Patient Encounter": "healthcare_management.healthcare_management.custom_doctype.patient_encounter.patient_encounter_dashboard.get_dashboard_data",
+	"Patient Encounter": "healthcare_kepin.healthcare_kepin.custom_doctype.patient_encounter.patient_encounter_dashboard.get_dashboard_data",
 }
 
 # exempt linked doctypes from being automatically cancelled
@@ -183,13 +183,13 @@ override_doctype_dashboards = {
 
 # Request Events
 # ----------------
-# before_request = ["healthcare_management.utils.before_request"]
-# after_request = ["healthcare_management.utils.after_request"]
+# before_request = ["healthcare_kepin.utils.before_request"]
+# after_request = ["healthcare_kepin.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["healthcare_management.utils.before_job"]
-# after_job = ["healthcare_management.utils.after_job"]
+# before_job = ["healthcare_kepin.utils.before_job"]
+# after_job = ["healthcare_kepin.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -219,5 +219,5 @@ override_doctype_dashboards = {
 # --------------------------------
 
 # auth_hooks = [
-#	"healthcare_management.auth.validate"
+#	"healthcare_kepin.auth.validate"
 # ]

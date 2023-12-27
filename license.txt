@@ -1,1 +1,1 @@
-License: 'healthcare_management' created at /home/frappe/frappe-bench/apps/healthcare_management
+License: 'healthcare_kepin' created at /home/frappe/frappe-bench/apps/healthcare_kepin

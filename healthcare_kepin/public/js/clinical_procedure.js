@@ -45,7 +45,7 @@ get_procedure_prescribed = function(frm){
 	}
 
 	frappe.call({
-		method:"healthcare_management.healthcare_management.custom_doctype.clinical_procedure.clinical_procedure.get_procedure_prescribed",
+		method:"healthcare_kepin.healthcare_kepin.custom_doctype.clinical_procedure.clinical_procedure.get_procedure_prescribed",
 		args: {patient: frm.doc.patient},
 		callback: function(r){
 			show_procedure_templates(frm, r.message);

@@ -5,7 +5,7 @@ from frappe.utils import add_to_date, get_datetime, getdate, now_datetime
 
 from healthcare.healthcare.doctype.nursing_task.nursing_task import NursingTask
 
-class HealthcareNursingTask(NursingTask):
+class KepinNursingTask(NursingTask):
 	def set_task_schedule(self):
 		if not self.requested_start_time or (get_datetime(self.requested_start_time) < now_datetime()):
 			self.requested_start_time = now_datetime()

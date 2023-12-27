@@ -3,7 +3,7 @@ import frappe
 from healthcare.healthcare.doctype.patient_encounter.patient_encounter import PatientEncounter
 from healthcare.healthcare.doctype.clinical_procedure.clinical_procedure import get_items
 
-class HealthcarePatientEncounter(PatientEncounter):
+class KepinPatientEncounter(PatientEncounter):
 	def make_service_request(self):
 		if self.lab_test_prescription:
 			for lab_test in self.lab_test_prescription:

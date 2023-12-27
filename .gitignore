@@ -3,5 +3,5 @@
 *.egg-info
 *.swp
 tags
-healthcare_management/docs/current
+healthcare_kepin/docs/current
 node_modules/
